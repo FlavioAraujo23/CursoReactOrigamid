@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Ex from './EX.JSX'
-
+import App from './App.jsx'
+import Ex2 from './Ex2.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Ex />
+    <Ex2 />
   </React.StrictMode>,
 )
