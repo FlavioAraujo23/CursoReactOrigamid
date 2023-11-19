@@ -1,19 +1,32 @@
 import React from 'react'
-
-const Input = ({ id, label, setValue, ...props }) => {
 //   Input
 // Podemos definir um componente para cada tipo de campo de formulário, assim evitamos criar código repetido.
+ 
+const Input = ({
+  id,
+  label,
+  value,
+  type,
+  onChange,
+  error,
+  onBlur,
+  placeholder,
+}) => {
   return (
-    <form>
+    <>
       <label htmlFor={id}>{label}</label>
       <input
+        type={type}
         id={id}
         name={id}
-        onChange={({ target }) => setValue(target.value)}
-        {...props}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        placeholder={placeholder}
       />
-    </form>
-  )
-}
+      {error && <p>{error}</p>}
+    </>
+  );
+};
 
-export default Input
+export default Input;
