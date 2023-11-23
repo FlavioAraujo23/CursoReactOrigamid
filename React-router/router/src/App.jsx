@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Pagina404 from './Pagina404';
-import Header from './/Header';
+import Header from './Header';
+import Produto from './Produto';
 
 // BrowserRouter, Routes e Route
 // O BrowserRouter deve ser o componente pai que envolve tudo que depender do react-router. O Routes define a área em que vamos colocar os nossos Route. O Route recebe um caminho em path, se esse caminho for o mesmo do URL ele irá renderizar o component que estiver dentro de element={}.
@@ -15,6 +16,9 @@ const App = () => {
           {/* 404 - Não Encontrado
               O * renderiza um elemento para todas as rotas que não foram definidas em path. Uso ideal para mostrarmos um componente indicando que a página não existe. */}
           <Route path="*" element={<Pagina404 />} />
+          {/* Rota Dinâmica
+              O uso de :nome irá definir uma rota dinâmica, onde o nome poderá ser utilizado como uma variável dentro do componente. Serve para buscarmos rotas dinâmicas como produto/notebook ou produto/smartphone. */}
+          <Route path="produto/:id" element={<Produto />} />
         </Routes>
       </BrowserRouter>
     </>
